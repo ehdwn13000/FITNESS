@@ -1,0 +1,526 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 18px 16px 10px;
+  z-index: 10;
+}
+
+.app-header h1 {
+  margin: 0 0 14px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.tabs,
+.sub-tabs {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+}
+
+.sub-tabs {
+  margin-bottom: 14px;
+}
+
+.tab,
+.sub-tab {
+  flex: 1;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.tab:hover,
+.sub-tab:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.tab.active,
+.sub-tab.active {
+  color: var(--text);
+  font-weight: 700;
+  background: var(--surface);
+  box-shadow: var(--shadow-card-sm);
+}
+
+.app-main {
+  padding: 16px 16px 32px;
+  flex: 1;
+}
+
+.placeholder {
+  text-align: center;
+  color: var(--text-tertiary);
+  margin-top: 40px;
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  padding: 8px;
+  color: var(--text-tertiary);
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.icon-btn:hover {
+  background: var(--bg-hover);
+  color: var(--danger);
+}
+
+/* ===== 운동 기록 ===== */
+
+.new-session-btn {
+  width: 100%;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.session-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.session-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.session-date {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.session-notes {
+  width: 100%;
+  resize: vertical;
+  min-height: 32px;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+}
+
+.exercise-entry-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exercise-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exercise-name {
+  font-weight: 700;
+  flex: 1;
+}
+
+.exercise-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-radius: var(--radius-pill);
+  padding: 3px 8px;
+}
+
+.set-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.set-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.set-index {
+  width: 18px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.set-input {
+  width: 56px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.set-unit {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.set-x {
+  color: var(--text-tertiary);
+}
+
+.add-set-btn,
+.add-exercise-btn {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 6px 4px;
+}
+
+/* ===== 종목 선택기 ===== */
+
+.exercise-picker {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-picker-filters {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.filter-chip {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-secondary);
+}
+
+.filter-chip.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.exercise-search {
+  padding: 8px 10px;
+}
+
+.exercise-picker-list {
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.exercise-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.exercise-option:hover {
+  background: var(--bg-hover);
+}
+
+.exercise-option-meta {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.add-exercise-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.add-exercise-form input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px 10px;
+}
+
+.add-exercise-form button {
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+}
+
+.cancel-btn {
+  align-self: flex-start;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ===== 진행 추이 ===== */
+
+.progress-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-view select {
+  padding: 10px;
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card-sm);
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.progress-date {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.progress-sets {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+.progress-max {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ===== InBody ===== */
+
+.photo-capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.photo-preview {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.photo-capture-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.photo-btn {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-card-sm);
+  cursor: pointer;
+}
+
+.analyze-btn {
+  width: 100%;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.ocr-progress {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocr-progress-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent-bg);
+  transition: width 0.2s ease;
+}
+
+.ocr-progress span {
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.skip-btn {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.inbody-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inbody-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.inbody-field input {
+  padding: 10px;
+  font-weight: 400;
+}
+
+.ocr-badge {
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+}
+
+.ocr-badge.missing {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+.raw-ocr-toggle button {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.raw-ocr-text {
+  white-space: pre-wrap;
+  font-size: 11px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  margin-top: 6px;
+}
+
+.inbody-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.inbody-form-actions .save-btn {
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+}
+
+.inbody-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inbody-record-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card-sm);
+}
+
+.inbody-record-row.editing {
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  padding: 12px;
+}
+
+.inbody-record-summary {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.inbody-record-date {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.inbody-record-metric {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inbody-delta {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
