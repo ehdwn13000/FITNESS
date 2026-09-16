@@ -17,8 +17,8 @@ export default defineConfig({
         start_url: '/FITNESS/',
         scope: '/FITNESS/',
         display: 'standalone',
-        background_color: '#faf9f6',
-        theme_color: '#ff6a3d',
+        background_color: '#0d0d0d',
+        theme_color: '#e66767',
         icons: [
           { src: 'pwa-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512.png', sizes: '512x512', type: 'image/png' },

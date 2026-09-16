@@ -86,6 +86,26 @@ export async function deleteSet(id) {
   if (error) throw error;
 }
 
+export async function getPreviousEntry(exerciseId, excludeEntryId) {
+  const { data, error } = await supabase
+    .from("workout_exercises")
+    .select("id, workout_sessions(performed_at), workout_sets(weight_kg, reps)")
+    .eq("exercise_id", exerciseId)
+    .neq("id", excludeEntryId)
+    .order("performed_at", { ascending: false, foreignTable: "workout_sessions" })
+    .limit(1);
+
+  if (error) {
+    console.error("이전 기록을 불러오지 못했습니다", error);
+    return null;
+  }
+
+  const entry = data?.[0];
+  if (!entry || !entry.workout_sessions) return null;
+
+  return { date: entry.workout_sessions.performed_at, sets: entry.workout_sets };
+}
+
 export async function getExerciseProgress(exerciseId) {
   const { data, error } = await supabase
     .from("workout_exercises")

@@ -1,6 +1,7 @@
 import { useWorkout } from "../../context/WorkoutContext";
 import { confirmDelete } from "../../utils/confirm";
 import SetRow from "./SetRow";
+import PreviousRecordHint from "./PreviousRecordHint";
 
 export default function ExerciseEntryCard({ entry }) {
   const { addSet, deleteExercise } = useWorkout();
@@ -30,6 +31,7 @@ export default function ExerciseEntryCard({ entry }) {
           ✕
         </button>
       </div>
+      {exercise && <PreviousRecordHint exerciseId={exercise.id} excludeEntryId={entry.id} />}
       <div className="set-list">
         {sets.map((set, i) => (
           <SetRow key={set.id} set={set} index={i} />
